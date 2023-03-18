@@ -14,7 +14,7 @@ data:
     volume:
       id: ${VOLUME_ID}
       dir: /data
-      capacity: 1073741824
+      capacity: 53687091200 # 50GB same as storage volume size
     meta_store:
       wal:
         io:
@@ -42,16 +42,18 @@ spec:
   replicas: 3
   serviceName: vanus-store
   volumeClaimTemplates:
-    - metadata:
-        name: data
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
         labels:
           app: vanus-controller
+        name: data
       spec:
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 1Gi
+            storage: 50Gi
   template:
     metadata:
       labels:

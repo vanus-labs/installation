@@ -18,7 +18,7 @@ data:
         otel_collector: http://127.0.0.1:4318
     cluster:
       component_name: root-controller
-      lease_duration_in_sec: 15
+      lease_duration_in_sec: 20
       etcd:
         - vanus-etcd-0.vanus-etcd:2379
         - vanus-etcd-1.vanus-etcd:2379

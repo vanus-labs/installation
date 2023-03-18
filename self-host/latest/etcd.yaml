@@ -153,7 +153,6 @@ spec:
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      creationTimestamp: null
       labels:
         app: vanus-etcd
       name: data
@@ -162,5 +161,4 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 10Gi
-      volumeMode: Filesystem
+          storage: 20Gi
